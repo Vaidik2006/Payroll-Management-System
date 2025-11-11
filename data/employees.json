@@ -1,0 +1,545 @@
+{
+  "roles": {
+    "Software Engineer": {
+      "hourly_rate": 300,
+      "default_hours": 160
+    },
+    "Senior Engineer": {
+      "hourly_rate": 360,
+      "default_hours": 170
+    },
+    "Project Manager": {
+      "hourly_rate": 450,
+      "default_hours": 180
+    },
+    "HR/Admin": {
+      "hourly_rate": 270,
+      "default_hours": 150
+    },
+    "Accountant": {
+      "hourly_rate": 330,
+      "default_hours": 155
+    },
+    "Intern/Trainee": {
+      "hourly_rate": 180,
+      "default_hours": 140
+    }
+  },
+  "employees": [
+    {
+      "code": 101,
+      "name": "Vaidik Samarth",
+      "designation": "Software Engineer",
+      "role": "Software Engineer",
+      "exp": 2,
+      "age": 21,
+      "working_hours": 160,
+      "loan_balance": 0,
+      "username": "vaidik101",
+      "password": "12345",
+      "salary": 50400,
+      "hra": 13608,
+      "da": 60480,
+      "pf": 6048,
+      "tax": 2016,
+      "meal_allowance": 300,
+      "medical_allowance": 300,
+      "transport_allowance": 300,
+      "loan_debit": 0,
+      "grosspay": 117324,
+      "effective_rate": 315
+    },
+    {
+      "code": 102,
+      "name": "Utkarsh Sharma",
+      "designation": "Project Manager",
+      "role": "Project Manager",
+      "exp": 5,
+      "age": 28,
+      "working_hours": 180,
+      "loan_balance": 10000,
+      "username": "utkarsh102",
+      "password": "12345"
+    },
+    {
+      "code": 103,
+      "name": "Samyak Jain",
+      "designation": "Senior Engineer",
+      "role": "Senior Engineer",
+      "exp": 4,
+      "age": 26,
+      "working_hours": 170,
+      "loan_balance": 7000,
+      "username": "samyak103",
+      "password": "12345"
+    },
+    {
+      "code": 104,
+      "name": "Shreyas Patil",
+      "designation": "Accountant",
+      "role": "Accountant",
+      "exp": 3,
+      "age": 25,
+      "working_hours": 155,
+      "loan_balance": 4000,
+      "username": "shreyas104",
+      "password": "12345"
+    },
+    {
+      "code": 105,
+      "name": "Riya Mehta",
+      "designation": "Software Engineer",
+      "role": "Software Engineer",
+      "exp": 1,
+      "age": 22,
+      "working_hours": 165,
+      "loan_balance": 0,
+      "username": "riya105",
+      "password": "12345"
+    },
+    {
+      "code": 106,
+      "name": "Aman Gupta",
+      "designation": "Software Engineer",
+      "role": "Software Engineer",
+      "exp": 2,
+      "age": 23,
+      "working_hours": 160,
+      "loan_balance": 3000,
+      "username": "aman106",
+      "password": "12345"
+    },
+    {
+      "code": 107,
+      "name": "Priya Singh",
+      "designation": "HR Executive",
+      "role": "HR/Admin",
+      "exp": 3,
+      "age": 25,
+      "working_hours": 150,
+      "loan_balance": 0,
+      "username": "priya107",
+      "password": "12345"
+    },
+    {
+      "code": 108,
+      "name": "Rohan Deshmukh",
+      "designation": "Intern",
+      "role": "Intern/Trainee",
+      "exp": 0,
+      "age": 20,
+      "working_hours": 140,
+      "loan_balance": 0,
+      "username": "rohan108",
+      "password": "12345"
+    },
+    {
+      "code": 109,
+      "name": "Anjali Nair",
+      "designation": "Senior Engineer",
+      "role": "Senior Engineer",
+      "exp": 6,
+      "age": 29,
+      "working_hours": 175,
+      "loan_balance": 8000,
+      "username": "anjali109",
+      "password": "12345"
+    },
+    {
+      "code": 110,
+      "name": "Karan Patel",
+      "designation": "Software Engineer",
+      "role": "Software Engineer",
+      "exp": 2,
+      "age": 23,
+      "working_hours": 162,
+      "loan_balance": 0,
+      "username": "karan110",
+      "password": "12345"
+    },
+    {
+      "code": 111,
+      "name": "Nisha Iyer",
+      "designation": "HR Manager",
+      "role": "HR/Admin",
+      "exp": 5,
+      "age": 30,
+      "working_hours": 150,
+      "loan_balance": 5000,
+      "username": "nisha111",
+      "password": "12345"
+    },
+    {
+      "code": 112,
+      "name": "Arjun Reddy",
+      "designation": "Accountant",
+      "role": "Accountant",
+      "exp": 4,
+      "age": 27,
+      "working_hours": 155,
+      "loan_balance": 4000,
+      "username": "arjun112",
+      "password": "12345"
+    },
+    {
+      "code": 113,
+      "name": "Neha Kulkarni",
+      "designation": "Project Manager",
+      "role": "Project Manager",
+      "exp": 6,
+      "age": 31,
+      "working_hours": 182,
+      "loan_balance": 6000,
+      "username": "neha113",
+      "password": "12345"
+    },
+    {
+      "code": 114,
+      "name": "Raj Shah",
+      "designation": "Senior Engineer",
+      "role": "Senior Engineer",
+      "exp": 3,
+      "age": 25,
+      "working_hours": 168,
+      "loan_balance": 0,
+      "username": "raj114",
+      "password": "12345"
+    },
+    {
+      "code": 115,
+      "name": "Tanvi Das",
+      "designation": "Software Engineer",
+      "role": "Software Engineer",
+      "exp": 2,
+      "age": 23,
+      "working_hours": 159,
+      "loan_balance": 0,
+      "username": "tanvi115",
+      "password": "12345"
+    },
+    {
+      "code": 116,
+      "name": "Aditya Menon",
+      "designation": "Intern",
+      "role": "Intern/Trainee",
+      "exp": 0,
+      "age": 19,
+      "working_hours": 138,
+      "loan_balance": 0,
+      "username": "aditya116",
+      "password": "12345"
+    },
+    {
+      "code": 117,
+      "name": "Sneha Verma",
+      "designation": "HR Executive",
+      "role": "HR/Admin",
+      "exp": 2,
+      "age": 24,
+      "working_hours": 152,
+      "loan_balance": 0,
+      "username": "sneha117",
+      "password": "12345"
+    },
+    {
+      "code": 118,
+      "name": "Ishan Malhotra",
+      "designation": "Software Engineer",
+      "role": "Software Engineer",
+      "exp": 3,
+      "age": 24,
+      "working_hours": 161,
+      "loan_balance": 2000,
+      "username": "ishan118",
+      "password": "12345"
+    },
+    {
+      "code": 119,
+      "name": "Sanya Kapoor",
+      "designation": "Accountant",
+      "role": "Accountant",
+      "exp": 2,
+      "age": 23,
+      "working_hours": 157,
+      "loan_balance": 0,
+      "username": "sanya119",
+      "password": "12345"
+    },
+    {
+      "code": 120,
+      "name": "Dhruv Bhat",
+      "designation": "Senior Engineer",
+      "role": "Senior Engineer",
+      "exp": 5,
+      "age": 28,
+      "working_hours": 174,
+      "loan_balance": 5000,
+      "username": "dhruv120",
+      "password": "12345"
+    },
+    {
+      "code": 121,
+      "name": "Kavya Rao",
+      "designation": "HR Assistant",
+      "role": "HR/Admin",
+      "exp": 1,
+      "age": 22,
+      "working_hours": 149,
+      "loan_balance": 0,
+      "username": "kavya121",
+      "password": "12345"
+    },
+    {
+      "code": 122,
+      "name": "Mohit Jain",
+      "designation": "Project Manager",
+      "role": "Project Manager",
+      "exp": 7,
+      "age": 32,
+      "working_hours": 180,
+      "loan_balance": 9000,
+      "username": "mohit122",
+      "password": "12345"
+    },
+    {
+      "code": 123,
+      "name": "Aditi Singh",
+      "designation": "Software Engineer",
+      "role": "Software Engineer",
+      "exp": 2,
+      "age": 23,
+      "working_hours": 160,
+      "loan_balance": 0,
+      "username": "aditi123",
+      "password": "12345"
+    },
+    {
+      "code": 124,
+      "name": "Parth Joshi",
+      "designation": "Accountant",
+      "role": "Accountant",
+      "exp": 3,
+      "age": 26,
+      "working_hours": 156,
+      "loan_balance": 2000,
+      "username": "parth124",
+      "password": "12345"
+    },
+    {
+      "code": 125,
+      "name": "Muskan Ali",
+      "designation": "Intern",
+      "role": "Intern/Trainee",
+      "exp": 0,
+      "age": 20,
+      "working_hours": 140,
+      "loan_balance": 0,
+      "username": "muskan125",
+      "password": "12345"
+    },
+    {
+      "code": 126,
+      "name": "Rahul Desai",
+      "designation": "Senior Engineer",
+      "role": "Senior Engineer",
+      "exp": 6,
+      "age": 29,
+      "working_hours": 175,
+      "loan_balance": 6000,
+      "username": "rahul126",
+      "password": "12345"
+    },
+    {
+      "code": 127,
+      "name": "Simran Kaur",
+      "designation": "Software Engineer",
+      "role": "Software Engineer",
+      "exp": 1,
+      "age": 22,
+      "working_hours": 158,
+      "loan_balance": 0,
+      "username": "simran127",
+      "password": "12345"
+    },
+    {
+      "code": 128,
+      "name": "Harsh Mehta",
+      "designation": "Accountant",
+      "role": "Accountant",
+      "exp": 4,
+      "age": 27,
+      "working_hours": 155,
+      "loan_balance": 0,
+      "username": "harsh128",
+      "password": "12345"
+    },
+    {
+      "code": 129,
+      "name": "Ananya Sen",
+      "designation": "HR Executive",
+      "role": "HR/Admin",
+      "exp": 3,
+      "age": 25,
+      "working_hours": 151,
+      "loan_balance": 0,
+      "username": "ananya129",
+      "password": "12345"
+    },
+    {
+      "code": 130,
+      "name": "Yash Tiwari",
+      "designation": "Project Manager",
+      "role": "Project Manager",
+      "exp": 6,
+      "age": 31,
+      "working_hours": 181,
+      "loan_balance": 5000,
+      "username": "yash130",
+      "password": "12345"
+    },
+    {
+      "code": 131,
+      "name": "Rachit Kumar",
+      "designation": "Software Engineer",
+      "role": "Software Engineer",
+      "exp": 2,
+      "age": 23,
+      "working_hours": 162,
+      "loan_balance": 0,
+      "username": "rachit131",
+      "password": "12345"
+    },
+    {
+      "code": 132,
+      "name": "Manvi Arora",
+      "designation": "Intern",
+      "role": "Intern/Trainee",
+      "exp": 0,
+      "age": 20,
+      "working_hours": 139,
+      "loan_balance": 0,
+      "username": "manvi132",
+      "password": "12345"
+    },
+    {
+      "code": 133,
+      "name": "Ishita Roy",
+      "designation": "Software Engineer",
+      "role": "Software Engineer",
+      "exp": 3,
+      "age": 25,
+      "working_hours": 160,
+      "loan_balance": 2000,
+      "username": "ishita133",
+      "password": "12345"
+    },
+    {
+      "code": 134,
+      "name": "Rudra Ghosh",
+      "designation": "Accountant",
+      "role": "Accountant",
+      "exp": 5,
+      "age": 28,
+      "working_hours": 155,
+      "loan_balance": 4000,
+      "username": "rudra134",
+      "password": "12345"
+    },
+    {
+      "code": 135,
+      "name": "Mitali Khanna",
+      "designation": "HR Executive",
+      "role": "HR/Admin",
+      "exp": 2,
+      "age": 24,
+      "working_hours": 150,
+      "loan_balance": 0,
+      "username": "mitali135",
+      "password": "12345"
+    },
+    {
+      "code": 136,
+      "name": "Devendra Rao",
+      "designation": "Senior Engineer",
+      "role": "Senior Engineer",
+      "exp": 4,
+      "age": 27,
+      "working_hours": 172,
+      "loan_balance": 3000,
+      "username": "devendra136",
+      "password": "12345"
+    },
+    {
+      "code": 137,
+      "name": "Tanya Bhatt",
+      "designation": "Intern",
+      "role": "Intern/Trainee",
+      "exp": 0,
+      "age": 19,
+      "working_hours": 140,
+      "loan_balance": 0,
+      "username": "tanya137",
+      "password": "12345"
+    },
+    {
+      "code": 138,
+      "name": "Rakesh Pillai",
+      "designation": "Accountant",
+      "role": "Accountant",
+      "exp": 6,
+      "age": 30,
+      "working_hours": 155,
+      "loan_balance": 0,
+      "username": "rakesh138",
+      "password": "12345"
+    },
+    {
+      "code": 139,
+      "name": "Esha Kapoor",
+      "designation": "Software Engineer",
+      "role": "Software Engineer",
+      "exp": 2,
+      "age": 23,
+      "working_hours": 160,
+      "loan_balance": 0,
+      "username": "esha139",
+      "password": "12345"
+    },
+    {
+      "code": 140,
+      "name": "Kabir Sinha",
+      "designation": "Project Manager",
+      "role": "Project Manager",
+      "exp": 7,
+      "age": 32,
+      "working_hours": 182,
+      "loan_balance": 7000,
+      "username": "kabir140",
+      "password": "12345"
+    }
+  ],
+  "payroll_history": [
+    {
+      "month": "2025-08",
+      "total_expense": 950000
+    },
+    {
+      "month": "2025-09",
+      "total_expense": 1012000
+    },
+    {
+      "month": "2025-10",
+      "total_expense": 1038000
+    },
+    {
+      "month": "2025-11",
+      "total_expense": 990000
+    }
+  ],
+  "logins": {
+    "admin": {
+      "username": "admin",
+      "password": "password"
+    }
+  }
+}

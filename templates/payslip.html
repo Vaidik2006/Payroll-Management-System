@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payslip - {{ employee.name }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body class="dark-form-page">
+  <div class="form-box" style="max-width: 600px; text-align: left;">
+    <h2 style="text-align:center;">Company Payroll Payslip</h2>
+
+    <p><b>Date:</b> {{ date }}</p>
+    <p><b>Employee Name:</b> {{ employee.name }}</p>
+    <p><b>Role:</b> {{ employee.role }}</p>
+    <p><b>Experience:</b> {{ employee.exp }} years</p>
+
+    <hr style="border: 1px solid rgba(255,255,255,0.1); margin: 15px 0;">
+
+    <h3 style="color:#64b5f6;">Earnings</h3>
+    <ul style="list-style-type:none; padding:0; line-height:1.8;">
+      <li>Basic: ₹{{ breakdown.basic }}</li>
+      <li>HRA (27%): ₹{{ breakdown.hra }}</li>
+      <li>DA (120%): ₹{{ breakdown.da }}</li>
+      <li>Meal Allowance: ₹{{ breakdown.meal_allowance }}</li>
+      <li>Medical Allowance: ₹{{ breakdown.medical_allowance }}</li>
+      <li>Transport Allowance: ₹{{ breakdown.transport_allowance }}</li>
+    </ul>
+
+    <h3 style="color:#ff8a65;">Deductions</h3>
+    <ul style="list-style-type:none; padding:0; line-height:1.8;">
+      <li>PF (12%): ₹{{ breakdown.pf }}</li>
+      <li>Tax (4%): ₹{{ breakdown.tax }}</li>
+      <li>Loan Debit: ₹{{ breakdown.loan_debit }}</li>
+    </ul>
+
+    <hr style="border: 1px solid rgba(255,255,255,0.1); margin: 15px 0;">
+    <h3 style="text-align:center; color:#81c784;">Net Pay: ₹{{ breakdown.netpay }}</h3>
+
+    <div class="actions" style="text-align:center; margin-top:20px;">
+      <a href="{{ url_for('download_payslip', filename=pdf_filename) }}" class="btn" style="display:inline-block; width:auto;">⬇ Download PDF</a>
+      <a href="{{ url_for('admin_dashboard') if session['user_role']=='admin' else url_for('employee_dashboard') }}" class="btn" style="display:inline-block; width:auto;">← Back</a>
+    </div>
+  </div>
+</body>
+</html>

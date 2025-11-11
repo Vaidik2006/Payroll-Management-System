@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ action }} Employee</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body class="dark-form-page">
+  <div class="form-box">
+    <h2>{{ action }} Employee</h2>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+      <label>Name:</label>
+      <input type="text" name="name" value="{{ employee.get('name', '') }}" required>
+
+      <label>Username:</label>
+      <input type="text" name="username" value="{{ employee.get('username', '') }}" required>
+
+      <label>Password:</label>
+      <input type="password" name="password" value="{{ employee.get('password', '') }}" required>
+
+      <label>Role:</label>
+      <select name="role" required>
+        {% for role in roles %}
+          <option value="{{ role }}" {% if employee.get('role') == role %}selected{% endif %}>{{ role }}</option>
+        {% endfor %}
+      </select>
+
+      <label>Experience (years):</label>
+      <input type="number" name="exp" value="{{ employee.get('exp', '') }}" required>
+
+      <label>Working Hours:</label>
+      <input type="number" name="working_hours" value="{{ employee.get('working_hours', '') }}" required>
+
+      <label>Loan Balance:</label>
+      <input type="number" name="loan_balance" value="{{ employee.get('loan_balance', '') }}" required>
+
+      <label>Department:</label>
+      <input type="text" name="department" value="{{ employee.get('department', '') }}">
+
+      <button type="submit">{{ action }} Employee</button>
+      <a href="{{ url_for('admin_dashboard') }}" class="btn">Cancel</a>
+    </form>
+  </div>
+</body>
+</html>

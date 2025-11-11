@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body class="dark-dashboard">
+  <div class="dashboard-grid">
+    
+    <!-- Header Bar -->
+    <header class="top-bar">
+      <div class="header-left">
+        <h1>Employee Dashboard</h1>
+      </div>
+      <div class="header-right">
+        <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+      </div>
+    </header>
+
+    <!-- Welcome Card -->
+    <section class="kpi-section">
+      <div class="kpi-card" style="flex: 1; text-align: center;">
+        <h2>{{ employee.name }}</h2>
+        <p>Welcome to your payroll dashboard</p>
+      </div>
+      <div class="kpi-card" style="flex: 1;">
+        <h2>{{ employee.role }}</h2>
+        <p>Your Current Role</p>
+      </div>
+    </section>
+
+    <!-- Salary Table Section -->
+    <section class="employee-table-card">
+      <div class="table-header">
+        <h3>Salary Details</h3>
+      </div>
+
+      <table>
+        <tr><th>Role</th><td>{{ employee.role }}</td></tr>
+        <tr><th>Working Hours</th><td>{{ breakdown.hours }}</td></tr>
+        <tr><th>Hourly Rate</th><td>₹{{ breakdown.hourly_rate }}</td></tr>
+        <tr><th>Experience Factor</th><td>{{ breakdown.exp_multiplier }}×</td></tr>
+        <tr><th>Gross Pay</th><td>₹{{ breakdown.grosspay }}</td></tr>
+        <tr><th>Loan Debit</th><td>₹{{ breakdown.loan_debit }}</td></tr>
+      </table>
+
+      <div class="actions" style="text-align:center; margin-top:20px;">
+        <a href="{{ url_for('payslip_view', emp_code=employee.code) }}" class="btn">📄 View Payslip</a>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body class="dark-dashboard">
+    <div class="dashboard-grid">
+      <header class="top-bar">
+        <div class="header-left">
+          <h1>Employee Dashboard</h1>
+        </div>
+        <div class="header-right">
+          <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+        </div>
+      </header>
+
+      <!-- KPI Cards -->
+      <section class="kpi-section">
+        <div class="kpi-card">
+          <h2>{{ employees|length }}</h2>
+          <p>Total Employees</p>
+        </div>
+        <div class="kpi-card">
+          <h2>{{ charts_data.avgPF }}</h2>
+          <p>Average PF (₹)</p>
+        </div>
+        <div class="kpi-card">
+          <h2>{{ charts_data.avgTax }}</h2>
+          <p>Average Tax (₹)</p>
+        </div>
+        <div class="kpi-card">
+          <h2>{{ charts_data.avgLoan }}</h2>
+          <p>Average Loan (₹)</p>
+        </div>
+      </section>
+
+      <!-- Charts Section -->
+      <section class="charts-grid">
+        <div class="chart-card">
+          <h3>Salary Distribution per Role</h3>
+          <canvas id="salaryChart"></canvas>
+        </div>
+
+        <div class="chart-card">
+          <h3>Average Deductions Breakdown</h3>
+          <canvas id="deductionsChart"></canvas>
+        </div>
+
+        <div class="chart-card">
+          <h3>Payroll Expense Trend</h3>
+          <canvas id="payrollChart"></canvas>
+        </div>
+      </section>
+
+      <!-- Employee Table Section -->
+      <section class="employee-table-card">
+        <div class="table-header">
+          <h3>Employee Summary</h3>
+          <button onclick="addEmployee()">➕ Add</button>
+          <button onclick="editEmployee()">✏️ Edit</button>
+          <button onclick="deleteEmployee()">🗑 Delete</button>
+        </div>
+
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Exp</th>
+                <th>Hours</th>
+                <th>Loan</th>
+                <th>Payslip</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for emp in employees %}
+              <tr>
+                <td>{{ emp.code }}</td>
+                <td>{{ emp.name }}</td>
+                <td>{{ emp.role }}</td>
+                <td>{{ emp.exp }}</td>
+                <td>{{ emp.working_hours }}</td>
+                <td>{{ emp.loan_balance }}</td>
+                <td>
+                  <a href="{{ url_for('payslip_view', emp_code=emp.code) }}"
+                    >View</a
+                  >
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- CHART SCRIPTS -->
+    <script>
+      const chartData = {{ charts_data | tojson | safe }};
+
+      // Salary Bar Chart
+      new Chart(document.getElementById('salaryChart'), {
+        type: 'bar',
+        data: {
+          labels: chartData.roles,
+          datasets: [{
+            label: 'Total Gross Pay (₹)',
+            data: chartData.roleTotals,
+            backgroundColor: ['#81c784', '#64b5f6', '#ffb74d', '#ba68c8', '#ff8a65'],
+            borderRadius: 6
+          }]
+        },
+        options: {
+          plugins: { legend: { display: false } },
+          scales: { y: { beginAtZero: true } },
+          responsive: true
+        }
+      });
+
+      // Deductions Pie Chart
+      new Chart(document.getElementById('deductionsChart'), {
+        type: 'doughnut',
+        data: {
+          labels: ['PF (12%)', 'Tax (4%)', 'Loan Debit (9%)'],
+          datasets: [{
+            data: [chartData.avgPF, chartData.avgTax, chartData.avgLoan],
+            backgroundColor: ['#64b5f6', '#ffd54f', '#ff7043'],
+            hoverOffset: 10
+          }]
+        },
+        options: {
+          cutout: '50%',
+          plugins: { legend: { position: 'bottom' } },
+          responsive: true
+        }
+      });
+
+      // Payroll Expense Line Chart
+      new Chart(document.getElementById('payrollChart'), {
+        type: 'line',
+        data: {
+          labels: chartData.months,
+          datasets: [{
+            label: 'Total Payroll (₹)',
+            data: chartData.expenses,
+            borderColor: '#ff8a65',
+            backgroundColor: 'rgba(255, 138, 101, 0.2)',
+            tension: 0.3,
+            fill: true
+          }]
+        },
+        options: {
+          plugins: { legend: { display: false } },
+          scales: { y: { beginAtZero: false } },
+          responsive: true
+        }
+      });
+    </script>
+    <script>
+      // Filter employees by role using the checkboxes
+      const checkboxes = document.querySelectorAll(".roleCheck");
+      const rows = document.querySelectorAll("tbody tr");
+
+      checkboxes.forEach((cb) => {
+        cb.addEventListener("change", () => {
+          const selected = Array.from(checkboxes)
+            .filter((c) => c.checked)
+            .map((c) => c.value);
+          rows.forEach((row) => {
+            const role = row.children[2].innerText.trim();
+            row.style.display = selected.includes(role) ? "" : "none";
+          });
+        });
+      });
+
+      // Add / Edit / Delete actions
+      function addEmployee() {
+        window.location.href = "{{ url_for('add_employee_route') }}";
+      }
+      function editEmployee() {
+        const code = prompt("Enter Employee Code to Edit:");
+        if (code) window.location.href = "/employee/edit/" + code;
+      }
+      function deleteEmployee() {
+        const code = prompt("Enter Employee Code to Delete:");
+        if (code && confirm("Are you sure you want to delete?"))
+          window.location.href = "/employee/delete/" + code;
+      }
+    </script>
+  </body>
+</html>
